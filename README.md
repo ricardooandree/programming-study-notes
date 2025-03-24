@@ -35,6 +35,7 @@ TBD
 - The repository is organized by topic, with each directory corresponding to a concept or module.
 - Some topics may contain subfolders expanding on the theme with practical examples or sub-concepts.
 - **Languages Used:** Most code examples (especially in DSA) are written in Java for consistency and readability.
+- The notes are in markdown format. Since they've been written using [Obsidian](https://obsidian.md/) software they might use specific plugin features that aren't available outside it.
   
 ## How to Use This Repository
 - **Navigate by Topic:** Each folder is named according to the main study concept I've approached, making it easy to locate specific topics. You may use this repository as a supplement resource to your study.
