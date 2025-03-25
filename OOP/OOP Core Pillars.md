@@ -275,8 +275,8 @@ class Child extends Parent {
 Used to check an object's actual type at runtime before casting.
 
 ```java
-if (animal instanceof Dof){
-	((Dof) animal).bark();
+if (animal instanceof Dog){
+	((Dog) animal).bark();
 }
 ```
 
