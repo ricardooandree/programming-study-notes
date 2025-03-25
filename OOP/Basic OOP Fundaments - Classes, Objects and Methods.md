@@ -67,6 +67,40 @@ public class Person {
 }
 ```
 
+### Private Constructors
+
+A **private constructor** is a constructor that cannot be accessed from outside the class.
+
+**Why use private constructors?**
+- Prevent instantiation of utility/helper classes (`Collections`, `Math`)
+- Enforce singleton pattern
+- Control object creation (e.g. use factory methods)
+
+```java
+// Singleton Class
+public class Singleton {
+	private static final Singleton instance = new Singleton();
+
+	private Singleton() {}  // Prevents external instantiation
+
+	public static Singleton getInstance() {
+		return instance;
+	}
+}
+
+// Utility classes
+public class MathUtils {
+	private MathUtils() {}  // Cannot be instantiated
+
+	public static int square(int x) {
+		return x * x;
+	}
+}
+```
+
+>[!important]
+>Private constructors still allow instantiation **from within the class itself**. This is how singletons and factories work!
+
 ### What is a Destructor?
 
 **Destructors** are methods to destroy objects => release the memory associated with them.
@@ -187,8 +221,11 @@ public int hashCode(){
 }
 ```
 
+> Always override `equals()` and `hashCode()` together!
+
 >[!important]
->Always override `equals()` and `hashCode()` together!
+>== checks memory addresses. Use `equals()` for content comparison.
+>If two objects are equal, they must return the same hash code.
 
 ---
 ## ✳️ Data Types & Generics, Value & Reference
@@ -223,7 +260,7 @@ Book myBook = new Book();
 
 ### Wrapper Classes
 
-Box primitives into objects (`Integer`, `Double`, `Boolean`) so they can be used in collections or generic types.
+Box primitives into objects (`Integer`, `Double`, `Boolean`) so they can be used in collections or generic types - utility methods.
 
 ### Generic Data Types
 
@@ -302,6 +339,8 @@ names.stream()  // creates a stream from the list
      .map(String::toUpperCase)  // converts to uppercase
      .forEach(System.out::println);  // prints each result
 ```
+
+> Use `collect(Collectors.toList())` to build results into a new collection after a stream operation.
 
 Streams Key Features:
 - Works with **collections**
